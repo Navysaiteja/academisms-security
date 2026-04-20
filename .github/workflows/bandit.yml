@@ -18,8 +18,8 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run Bandit Scan
-        run: |
-          pip install bandit
-          bandit -r . -f txt
+      - name: Install Bandit
+        run: pip install bandit
 
+      - name: Run Bandit Scan
+        run: python -m bandit -r . -f txt 
